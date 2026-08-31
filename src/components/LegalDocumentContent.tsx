@@ -73,8 +73,8 @@ export function LegalDocumentContent({ content }: LegalDocumentContentProps) {
         flushList();
       }
       listKind = nextKind;
-      const item = orderedItem?.[1] ?? unorderedItem![1];
-      listItems.push(item);
+      const match = orderedItem ?? unorderedItem!;
+      listItems.push(match[1]!);
     } else if (line === "---") {
       flushParagraph();
       flushList();
