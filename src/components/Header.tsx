@@ -28,7 +28,7 @@ export function Header() {
             <Link
               key={item.label}
               to={item.to}
-              hash={item.hash}
+              {...(item.hash ? { hash: item.hash } : {})}
               activeProps={{ className: "text-primary" }}
               activeOptions={item.exact ? { exact: true } : undefined}
               className="text-sm font-medium text-foreground transition-colors hover:text-primary"
@@ -61,7 +61,7 @@ export function Header() {
               <Link
                 key={item.label}
                 to={item.to}
-                hash={item.hash}
+                {...(item.hash ? { hash: item.hash } : {})}
                 activeProps={{ className: "text-primary bg-accent" }}
                 activeOptions={item.exact ? { exact: true } : undefined}
                 className="rounded-lg px-3 py-3 text-base font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
