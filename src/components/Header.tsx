@@ -30,7 +30,7 @@ export function Header() {
               to={item.to}
               {...(item.hash ? { hash: item.hash } : {})}
               activeProps={{ className: "text-primary" }}
-              activeOptions={item.exact ? { exact: true } : undefined}
+              {...(item.exact ? { activeOptions: { exact: true } } : {})}
               className="text-sm font-medium text-foreground transition-colors hover:text-primary"
               onClick={() => setIsOpen(false)}
             >
@@ -63,7 +63,7 @@ export function Header() {
                 to={item.to}
                 {...(item.hash ? { hash: item.hash } : {})}
                 activeProps={{ className: "text-primary bg-accent" }}
-                activeOptions={item.exact ? { exact: true } : undefined}
+                {...(item.exact ? { activeOptions: { exact: true } } : {})}
                 className="rounded-lg px-3 py-3 text-base font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                 onClick={() => setIsOpen(false)}
               >
