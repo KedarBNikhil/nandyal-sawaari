@@ -229,18 +229,18 @@ function Legal() {
           Review our policies to understand how Sawaari handles your information and governs use of the platform.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a
-            href="/privacy-policy"
+          <Link
+            to="/privacy-policy"
             className="inline-flex w-full items-center justify-center rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto"
           >
             Privacy Policy
-          </a>
-          <a
-            href="/terms-and-conditions"
+          </Link>
+          <Link
+            to="/terms-and-conditions"
             className="inline-flex w-full items-center justify-center rounded-lg border border-border bg-background px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-accent sm:w-auto"
           >
             Terms & Conditions
-          </a>
+          </Link>
         </div>
       </div>
     </section>
