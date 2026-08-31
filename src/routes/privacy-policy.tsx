@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { LegalDocumentContent } from "@/components/LegalDocumentContent";
 import { LegalLayout } from "@/components/LegalLayout";
+import { legalDocuments } from "@/legal/legalDocuments";
 
 export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
@@ -26,92 +28,8 @@ export const Route = createFileRoute("/privacy-policy")({
 
 function PrivacyPolicyPage() {
   return (
-    <LegalLayout title="Privacy Policy" lastUpdated="[Date to be inserted]">
-      <Section title="Introduction">
-        <Placeholder />
-      </Section>
-
-      <Section title="Information We Collect">
-        <Placeholder />
-      </Section>
-
-      <Section title="Account and Contact Information">
-        <Placeholder />
-      </Section>
-
-      <Section title="Location Information">
-        <Placeholder />
-      </Section>
-
-      <Section title="Ride and Transaction Information">
-        <Placeholder />
-      </Section>
-
-      <Section title="Device and Technical Information">
-        <Placeholder />
-      </Section>
-
-      <Section title="How We Use Information">
-        <Placeholder />
-      </Section>
-
-      <Section title="How We Share Information">
-        <Placeholder />
-      </Section>
-
-      <Section title="Location Data">
-        <Placeholder />
-      </Section>
-
-      <Section title="Data Retention">
-        <Placeholder />
-      </Section>
-
-      <Section title="Account Deletion">
-        <Placeholder />
-      </Section>
-
-      <Section title="Security">
-        <Placeholder />
-      </Section>
-
-      <Section title="Children's Privacy">
-        <Placeholder />
-      </Section>
-
-      <Section title="User Rights">
-        <Placeholder />
-      </Section>
-
-      <Section title="Third-Party Services">
-        <Placeholder />
-      </Section>
-
-      <Section title="Changes to This Policy">
-        <Placeholder />
-      </Section>
-
-      <Section title="Contact Us">
-        <Placeholder />
-      </Section>
+    <LegalLayout title={legalDocuments.privacy.title} lastUpdated="31 August 2026">
+      <LegalDocumentContent content={legalDocuments.privacy.content} />
     </LegalLayout>
-  );
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section>
-      <h2 className="text-xl font-semibold text-foreground">{title}</h2>
-      <div className="mt-3 text-sm leading-relaxed text-muted-foreground">{children}</div>
-    </section>
-  );
-}
-
-function Placeholder() {
-  return (
-    <p>
-      This section is a placeholder. The final Sawaari Privacy Policy content will be inserted here before
-      publication.
-    </p>
   );
 }
