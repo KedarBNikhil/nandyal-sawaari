@@ -55,13 +55,15 @@ export function LegalDocumentContent({ content }: LegalDocumentContentProps) {
     if (heading) {
       flushParagraph();
       flushList();
-      const Heading = heading[1].length === 1 ? "h2" : "h3";
+      const level = heading[1]!;
+      const text = heading[2]!;
+      const Heading = level.length === 1 ? "h2" : "h3";
       blocks.push(
         <Heading
           key={`heading-${blocks.length}`}
           className={Heading === "h2" ? "pt-2 text-xl font-semibold text-foreground" : "pt-1 text-base font-semibold text-foreground"}
         >
-          {renderInline(heading[2])}
+          {renderInline(text)}
         </Heading>,
       );
     } else if (orderedItem || unorderedItem) {
@@ -71,7 +73,8 @@ export function LegalDocumentContent({ content }: LegalDocumentContentProps) {
         flushList();
       }
       listKind = nextKind;
-      listItems.push((orderedItem ?? unorderedItem)![1]);
+      const match = orderedItem ?? unorderedItem!;
+      listItems.push(match[1]!);
     } else if (line === "---") {
       flushParagraph();
       flushList();
