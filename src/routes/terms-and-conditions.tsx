@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { LegalDocumentContent } from "@/components/LegalDocumentContent";
 import { LegalLayout } from "@/components/LegalLayout";
+import { legalDocuments } from "@/legal/legalDocuments";
 
 export const Route = createFileRoute("/terms-and-conditions")({
   head: () => ({
@@ -25,116 +27,8 @@ export const Route = createFileRoute("/terms-and-conditions")({
 
 function TermsAndConditionsPage() {
   return (
-    <LegalLayout title="Terms & Conditions" lastUpdated="[Date to be inserted]">
-      <Section title="Introduction">
-        <Placeholder />
-      </Section>
-
-      <Section title="Acceptance of Terms">
-        <Placeholder />
-      </Section>
-
-      <Section title="Eligibility">
-        <Placeholder />
-      </Section>
-
-      <Section title="Sawaari Platform">
-        <Placeholder />
-      </Section>
-
-      <Section title="Customer Accounts">
-        <Placeholder />
-      </Section>
-
-      <Section title="Captain Accounts">
-        <Placeholder />
-      </Section>
-
-      <Section title="Ride Requests">
-        <Placeholder />
-      </Section>
-
-      <Section title="Fares and Payments">
-        <Placeholder />
-      </Section>
-
-      <Section title="Promotions and Free Rides">
-        <Placeholder />
-      </Section>
-
-      <Section title="Cancellations">
-        <Placeholder />
-      </Section>
-
-      <Section title="User Conduct">
-        <Placeholder />
-      </Section>
-
-      <Section title="Communication Between Customers and Captains">
-        <Placeholder />
-      </Section>
-
-      <Section title="Safety">
-        <Placeholder />
-      </Section>
-
-      <Section title="Prohibited Activities">
-        <Placeholder />
-      </Section>
-
-      <Section title="Suspension and Termination">
-        <Placeholder />
-      </Section>
-
-      <Section title="Intellectual Property">
-        <Placeholder />
-      </Section>
-
-      <Section title="Third-Party Services">
-        <Placeholder />
-      </Section>
-
-      <Section title="Disclaimers">
-        <Placeholder />
-      </Section>
-
-      <Section title="Limitation of Liability">
-        <Placeholder />
-      </Section>
-
-      <Section title="Indemnity">
-        <Placeholder />
-      </Section>
-
-      <Section title="Governing Law">
-        <Placeholder />
-      </Section>
-
-      <Section title="Changes to Terms">
-        <Placeholder />
-      </Section>
-
-      <Section title="Contact Us">
-        <Placeholder />
-      </Section>
+    <LegalLayout title={legalDocuments.terms.title} lastUpdated="31 August 2026">
+      <LegalDocumentContent content={legalDocuments.terms.content} />
     </LegalLayout>
-  );
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section>
-      <h2 className="text-xl font-semibold text-foreground">{title}</h2>
-      <div className="mt-3 text-sm leading-relaxed text-muted-foreground">{children}</div>
-    </section>
-  );
-}
-
-function Placeholder() {
-  return (
-    <p>
-      This section is a placeholder. The final Sawaari Terms & Conditions content will be inserted here before
-      publication.
-    </p>
   );
 }
