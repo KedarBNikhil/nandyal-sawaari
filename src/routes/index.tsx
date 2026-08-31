@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { MapPin, Smartphone, Users, Shield, MessageSquare, History, HeadphonesIcon } from "lucide-react";
 
 export const Route = createFileRoute("/")({
